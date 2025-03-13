@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "CreateMessage";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Mesajlar Düzenleme Sayfası</h2>
+
+<form method="post">
+
+    <label>İsim Soyisim</label>
+    <input type="text" class="form-control" name="NameSurname" />
+
+    <label>E Posta Adresi</label>
+    <input type="text" class="form-control" name="Mail" />
+
+    <label>Konu</label>
+    <input type="text" class="form-control" name="Subject" />
+
+    <label>Mesaj İçeriği</label>
+    <input type="text" class="form-control" name="MessageContent" />
+
+    <button class="btn btn-success">Ekle</button>
+
+</form>

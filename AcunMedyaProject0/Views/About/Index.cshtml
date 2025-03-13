@@ -1,0 +1,65 @@
+﻿@model List<AcunMedyaProject0.Models.Tbl_About>    
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+
+}
+
+<h2>Burası hakkımda sayfası</h2>
+
+<div class="container">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>AboutID</th>
+                <th>Kategori Resmi</th>
+                <th>Başlık</th>
+                <th>Doğum Günü</th>
+                <th>Web Sitesi</th>
+                <th>Telefon</th>
+                <th>Şehir</th>
+                <th>Yaş</th>
+                <th>E posta</th>
+                <th>Freelance</th>
+                <th>Açıklama1</th>
+                <th>Açıklama2</th>
+                <th>Eğitim Seviyesi</th>
+                <th>Güncelle</th>
+                <th>Sil</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.AboutID</td>
+                    <td>@item.ImageURL</td>
+                    <td>@item.Title</td>
+                    <td>@item.BirthDay</td>
+                    <td>@item.WebSite</td>
+                    <td>@item.City</td>
+                    <td>@item.Age</td>
+                    <td>@item.Email</td>
+                    <td>@item.FreeLance</td>
+                    <td>@item.Description1</td>
+                    <td>@item.Description2</td>
+                    <td>@item.Degree</td>
+                    <td><a href="#" class="btn btn-danger">Güncelle</a></td>
+                    <td><a href="/About/DeleteAbout/@item.AboutID" class="btn btn-dark">Sil</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/About/CreateAbout" class="btn btn-success">Ekle</a>
+</div>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+﻿@model AcunMedyaProject0.Models.Tbl_Testimonial
+@{
+    ViewBag.Title = "UpdateTestimonial";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Referans Güncelleme Sayfası </h2>
+
+<form method="post">
+
+    @Html.HiddenFor(x => x.TestimonialID)
+
+    <label>Açıklama1(Sayfa)</label>
+    @Html.TextBoxFor(x => x.Description1)
+    <br />
+
+    <label>Referans Adı</label>
+    @Html.TextBoxFor(x => x.TestimonialName)
+    <br />
+
+    <label>Açıklama2(Referans)</label>
+    @Html.TextBoxFor(x => x.Description2)
+    <br />
+
+    <label>Resim Linki</label>
+    @Html.TextBoxFor(x => x.ImageUrl)
+    <br />
+
+    <label>Unvan</label>
+    @Html.TextBoxFor(x => x.Title)
+    <br />
+
+    <button>Güncelle</button>
+
+</form>
+
