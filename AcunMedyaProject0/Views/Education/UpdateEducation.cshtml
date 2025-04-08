@@ -1,0 +1,35 @@
+﻿@model AcunMedyaProject0.Models.Tbl_Education
+@{
+    ViewBag.Title = "UpdateEducation";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Eğitim Güncelleme Sayfası</h2>
+
+<form method="post">
+
+    @Html.HiddenFor(x => x.EducationID)
+
+    <label>Başlangıç Yılı</label>
+    @Html.TextBoxFor(x => x.StartYear)
+    <br />
+
+    <label>Bitiş Yılı</label>
+    @Html.TextBoxFor(x => x.EndYear)
+    <br />
+
+    <label>İsim</label>
+    @Html.TextBoxFor(x => x.Name)
+    <br />
+
+    <label>Açıklama</label>
+    @Html.TextBoxFor(x => x.Description)
+    <br />
+
+    <label>Bölüm</label>
+    @Html.TextBoxFor(x => x.Section)
+    <br />
+
+    <button>Güncelle</button>
+
+</form>

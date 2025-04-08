@@ -1,0 +1,31 @@
+﻿@model AcunMedyaProject0.Models.Tbl_Message
+@{
+    ViewBag.Title = "UpdateMessage";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Mesajlar Güncelleme Sayfası</h2>
+
+<form method="post">
+
+    @Html.HiddenFor(x => x.MessageID)
+
+    <label>İsim Soyisim</label>
+    @Html.TextBoxFor(x => x.NameSurname)
+    <br />
+
+    <label>E Posta</label>
+    @Html.TextBoxFor(x => x.Mail)
+    <br />
+
+    <label>Konu</label>
+    @Html.TextBoxFor(x => x.Subject)
+    <br />
+
+    <label>Mesaj İçeriği</label>
+    @Html.TextBoxFor(x => x.MessageContent)
+    <br />
+
+    <button>Güncelle</button>
+
+</form>

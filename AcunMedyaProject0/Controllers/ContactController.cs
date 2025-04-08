@@ -37,6 +37,23 @@ namespace AcunMedyaProject0.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult UpdateContact(int id)
+        {
+            var values = db.Tbl_Contact.Find(id);
+            return View(values);
+        }
+        [HttpPost]
 
+        public ActionResult UpdateContact(Tbl_Contact model)
+        {
+            var values = db.Tbl_Contact.Find(model.ContactID);
+            values.Description = model.Description;
+            values.Address = model.Address;
+            values.Email = model.Email;
+            values.Phone = model.Phone;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
     }
 }

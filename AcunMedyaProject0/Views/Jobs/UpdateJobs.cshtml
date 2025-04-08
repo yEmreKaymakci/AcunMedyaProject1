@@ -1,0 +1,35 @@
+﻿@model AcunMedyaProject0.Models.Tbl_Jobs
+@{
+    ViewBag.Title = "UpdateJobs";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Deneyim Güncelleme Sayfası</h2>
+
+<form method="post">
+
+    @Html.HiddenFor(x => x.JobsID)
+
+    <label>Başlık</label>
+    @Html.TextBoxFor(x => x.Title)
+    <br />
+
+    <label>Başlangıç Tarihi</label>
+    @Html.TextBoxFor(x => x.StartDate)
+    <br />
+
+    <label>Bitiş Tarihi</label>
+    @Html.TextBoxFor(x => x.EndDate)
+    <br />
+
+    <label>Şirket Adı</label>
+    @Html.TextBoxFor(x => x.CompanyName)
+    <br />
+
+    <label>Açıklama</label>
+    @Html.TextBoxFor(x => x.Description)
+    <br />
+
+    <button>Güncelle</button>
+
+</form>

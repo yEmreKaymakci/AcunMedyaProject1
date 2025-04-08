@@ -37,5 +37,25 @@ namespace AcunMedyaProject0.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult UpdateProject(int id)
+        {
+            var values = db.Tbl_Project.Find(id);
+            return View(values);
+        }
+        [HttpPost]
+        public ActionResult UpdateProject(Tbl_Project model)
+        {
+            var values = db.Tbl_Project.Find(model.ProjectID);
+            values.ProjectName = model.ProjectName;
+            values.Description = model.Description;
+            values.ProjectLink = model.ProjectLink;
+            values.Image1 = model.Image1;
+            values.Image2 = model.Image2;
+            values.Image3 = model.Image3;
+            values.CategoryID = model.CategoryID;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
     }
 }

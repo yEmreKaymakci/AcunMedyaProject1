@@ -37,5 +37,25 @@ namespace AcunMedyaProject0.Controllers
             return RedirectToAction("Index");
 
         }
+
+        public ActionResult UpdateJobs(int id)
+        {
+            var values = db.Tbl_Jobs.Find(id);
+            return View(values);
+        }
+        [HttpPost]
+
+        public ActionResult UpdateJobs(Tbl_Jobs model)
+        {
+            var values = db.Tbl_Jobs.Find(model.JobsID);
+            values.Title = model.Title;
+            values.StartDate = model.StartDate;
+            values.EndDate = model.EndDate;
+            values.CompanyName = model.CompanyName;
+            values.Description = model.Description;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
     }
 }

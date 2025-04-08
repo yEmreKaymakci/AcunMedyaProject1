@@ -36,5 +36,22 @@ namespace AcunMedyaProject0.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult UpdateMessage(int id)
+        {
+            var values = db.Tbl_Message.Find(id);
+            return View(values);
+        }
+        [HttpPost]
+        public ActionResult UpdateMessage(Tbl_Message model)
+        {
+            var values = db.Tbl_Message.Find(model.MessageID);
+            values.NameSurname = model.NameSurname;
+            values.Mail = model.Mail;
+            values.Subject = model.Subject;
+            values.MessageContent = model.MessageContent;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

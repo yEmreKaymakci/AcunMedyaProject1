@@ -13,7 +13,7 @@
                 <th>ServicesID</th>
                 <th>Açıklama</th>
                 <th>Başlık</th>
-                <th>İconUrl</th>
+                <th>İkonUrl</th>
                 <th>Açıklama2</th>
                 <th>Güncelle</th>
                 <th>Sil</th>
@@ -21,15 +21,15 @@
             </tr>
         </thead>
         <tbody>
-            @foreach(var item in Model)
+            @foreach (var item in Model)
             {
                 <tr>
                     <td>@item.ServicesID</td>
                     <td>@item.Decription</td>
                     <td>@item.Title</td>
-                    <td>@item.IconUrl</td>
+                    <td><img src="@item.IconUrl" style="width:50px"</td>
                     <td>@item.Decription2</td>
-                    <td><a href="#" class="btn btn-dark">Güncelle</a></td>
+                    <td><a href="/Services/UpdateServices/@item.ServicesID" class="btn btn-dark">Güncelle</a></td>
                     <td><a href="/Services/DeleteServices/@item.ServicesID" class="btn btn-danger">Sil</a></td>
                 </tr>
             }

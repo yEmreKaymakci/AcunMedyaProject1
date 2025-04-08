@@ -1,0 +1,25 @@
+﻿@model AcunMedyaProject0.Models.Tbl_Skill
+@{
+    ViewBag.Title = "UpdateSkill";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Yetenekler Güncelleme Sayfası</h2>
+<form method="post">
+
+    @Html.HiddenFor(x => x.SkillID)
+
+    <table>Yetenek Adı</table>
+    @Html.TextBoxFor(x => x.SkillName)
+    <br />
+
+    <table>Yetkinlik</table>
+    @Html.TextBoxFor(x => x.Percentage)
+    <br />
+
+    <table>Açıklama</table>
+    @Html.TextBoxFor(x => x.Description)
+
+    <button>Güncelle</button>
+
+</form>

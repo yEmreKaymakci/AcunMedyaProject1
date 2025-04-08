@@ -38,5 +38,30 @@ namespace AcunMedyaProject0.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult UpdateAbout(int id)
+        {
+            var values = db.Tbl_About.Find(id);
+            return View(values);
+        }
+        [HttpPost]
+        public ActionResult UpdateAbout(Tbl_About model)
+        {
+            var values = db.Tbl_About.Find(model.AboutID);
+            values.ImageURL = model.ImageURL;
+            values.Title = model.Title;
+            values.BirthDay = model.BirthDay;
+            values.WebSite = model.WebSite;
+            values.Phone = model.Phone;
+            values.City = model.City;
+            values.Age = model.Age;
+            values.Email = model.Email;
+            values.FreeLance = model.FreeLance;
+            values.Description1 = model.Description1;
+            values.Description2 = model.Description2;
+            values.Degree = model.Degree;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
     }
 }

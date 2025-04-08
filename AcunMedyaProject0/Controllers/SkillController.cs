@@ -38,5 +38,22 @@ namespace AcunMedyaProject0.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult UpdateSkill(int id)
+        {
+            var values = db.Tbl_Skill.Find(id);
+            return View(values);
+        }
+        [HttpPost]
+
+        public ActionResult UpdateSkill(Tbl_Skill model)
+        {
+            var values = db.Tbl_Skill.Find(model.SkillID);
+            values.SkillName = model.SkillName;
+            values.Percentage = model.Percentage;
+            values.Description = model.Description;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
