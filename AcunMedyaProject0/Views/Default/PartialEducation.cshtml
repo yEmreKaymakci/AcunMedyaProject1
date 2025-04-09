@@ -1,0 +1,15 @@
+﻿@model List<AcunMedyaProject0.Models.Tbl_Education>
+
+
+@foreach (var item in Model)
+{
+    <div class="resume-item">
+        <h4>@item.Section</h4>
+        <h5>@item.StartYear & @item.EndYear </h5>
+        <p><em>@item.Name</em></p>
+        <p>@item.Description</p>
+    </div>
+
+
+}
+

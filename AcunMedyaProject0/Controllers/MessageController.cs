@@ -10,7 +10,7 @@ namespace AcunMedyaProject0.Controllers
     public class MessageController : Controller
     {
         // GET: Message
-        DbAcunMedyaProject1Entities1 db = new DbAcunMedyaProject1Entities1 ();
+        DbAcunMedyaProject1Entities db = new DbAcunMedyaProject1Entities ();
         public ActionResult Index()
         {
             var values = db.Tbl_Message.ToList();

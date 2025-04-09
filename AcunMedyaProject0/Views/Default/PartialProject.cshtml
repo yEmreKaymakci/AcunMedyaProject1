@@ -1,0 +1,27 @@
+﻿
+@{
+    var categories = ViewBag.Categories as List<Tbl_Category>;
+    var projects = ViewBag.Projects as List<Tbl_Project>;
+}
+
+<ul class="portfolio-filters">
+    @foreach (var categories in categories)
+    {
+        <li data-filter=".filter-@category.FilterClass">@category.Name</li>
+    }
+</ul>
+
+<div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+    @foreach (var item in Model)
+    {
+        <img src="@item.Image1" class="img-fluid" alt="">
+        <div class="portfolio-info">
+            <h4>@item.ProjectName</h4>
+            <p>@item.Description</p>
+            <a href="@item.Image2" title="@item.ProjectName" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+            <a href="#" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+        </div>
+    }
+</div>
+
+

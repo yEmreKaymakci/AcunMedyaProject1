@@ -4,10 +4,10 @@
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
-<h2>Referanslar sayfası</h2>
+<h2 class="modern-title">Referanslar sayfası</h2>
 
-<div class="container">
-    <table class="table table-bordered">
+<div class="table-wrapper">
+    <table class="my-table">
         <thead>
             <tr>
                 <th>TestimonialID</th>
@@ -18,7 +18,7 @@
                 <th>Başlık</th>
                 <th>Güncelle</th>
                 <th>Sil</th>
-                
+
             </tr>
         </thead>
         <tbody>
@@ -30,7 +30,7 @@
                         <td>@item.TestimonialID</td>
                         <td>@item.Description1</td>
                         <td>@item.TestimonialName</td>
-                        <td>@item.Description2</td>
+                        <td> <div class="cell-content">@item.Description2</div></td>
                         <td><img src="@item.ImageUrl" style="width:50px" /></td>
                         <td>@item.Title</td>
                         <td><a href="/Testimonial/UpdateTestimonial/@item.TestimonialID" class="btn btn-dark">Güncelle</a></td>

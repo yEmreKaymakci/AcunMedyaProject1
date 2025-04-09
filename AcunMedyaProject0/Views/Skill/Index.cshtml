@@ -4,10 +4,10 @@
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
-<h2>Yetenekler sayfası</h2>
+<h2 class="modern-title">Yetenekler sayfası</h2>
 
-<div class="container">
-    <table class="table table-bordered">
+<div class="table-wrapper">
+    <table class="my-table">
         <thead>
             <tr>
                 <th>SkillID</th>
@@ -25,7 +25,7 @@
                     <td>@item.SkillID</td>
                     <td>@item.SkillName</td>
                     <td>@item.Percentage</td>
-                    <td>@item.Description</td>
+                    <td> <div class="cell-content">@item.Description<</div></td>
                     <td><a href="/Skill/UpdateSkill/@item.SkillID" class="btn btn-danger">Güncelle</a></td>
                     <td><a href="/Skill/DeleteSkill/@item.SkillID" class="btn btn-dark">Sil</a></td>
                 </tr>

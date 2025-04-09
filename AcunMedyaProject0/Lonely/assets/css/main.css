@@ -638,86 +638,91 @@ section,
 # Hero Section
 --------------------------------------------------------------*/
 .hero {
-  background: url(../img/hero-bg.jpg) top center no-repeat;
-  background-size: cover;
-  width: 100%;
-  min-height: 90vh;
-  position: relative;
-  padding: 120px 0 60px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    width: 100%;
+    min-height: 90vh;
+    position: relative;
+    padding: 120px 0 60px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.hero:before {
-  content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 90%);
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-}
+    /* Arka Planý Hafif Karartma (Okunabilirlik için) */
+    .hero::before {
+        content: "";
+        background-color: rgba(255, 255, 255, 0.4); /* %50 karartma ile daha fazla kontrast */
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+    }
 
-.hero img {
-  position: absolute;
-  inset: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-}
+    /* Yazýlarýn Önde Kalmasýný Saðla */
+    .hero .container {
+        position: relative;
+        z-index: 3;
+        padding: 20px;
+    }
 
-.hero .container {
-  position: relative;
-  z-index: 3;
-}
+    /* Baþlýk Stili */
+    .hero h2 {
+        margin: 0;
+        font-size: 48px; /* Baþlýk boyutu arttýrýldý */
+        font-weight: 700;
+        line-height: 56px;
+        text-transform: uppercase; /* Baþlýk daha vurgulu olacak */
+        color: #fff; /* Baþlýk için beyaz renk */
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.); /* Yazýya hafif gölge ekleme */
+    }
 
-.hero h2 {
-  margin: 0;
-  font-size: 36px;
-  font-weight: 700;
-  line-height: 56px;
-}
+    /* Paragraf Yazýsý */
+    .hero p {
+        color: rgba(255, 255, 255, 0.9); /* Yazý rengi beyaz, opaklýk arttýrýldý */
+        margin: 10px 0 0 0;
+        font-size: 18px; /* Yazý boyutu büyütüldü */
+        font-weight: 400; /* Yazý tipi daha ince */
+        letter-spacing: 1px; /* Harfler arasýnda boþluk */
+        line-height: 1.5; /* Satýr yüksekliði arttýrýldý */
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+    }
 
-.hero p {
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-  margin: 10px 0 0 0;
-  font-size: 16px;
-  font-weight: 500;
-  letter-spacing: 1px;
-}
+    /* Scroll Butonu */
+    .hero .btn-scroll {
+        transition: 0.4s;
+        color: rgba(255, 255, 255, 0.7); /* Scroll butonu rengi */
+        display: block;
+        margin-top: 30px;
+        animation: btn-up-down 1s ease-in-out infinite alternate-reverse both;
+    }
 
-@media (max-width: 640px) {
-  .hero h1 {
-    font-size: 30px;
-    line-height: 36px;
-  }
-}
+        /* Scroll Butonunda Hover Efekti */
+        .hero .btn-scroll:hover {
+            color: var(--accent-color); /* Hover efekti */
+        }
 
-.hero .btn-scroll {
-  transition: 0.4s;
-  color: color-mix(in srgb, var(--default-color), transparent 60%);
-  display: block;
-  margin-top: 30px;
-  animation: btn-up-down 1s ease-in-out infinite alternate-reverse both;
-}
-
-.hero .btn-scroll i {
-  font-size: 48px;
-}
-
-.hero .btn-scroll:hover {
-  color: var(--accent-color);
-}
-
+/* Scroll Butonu Animasyonu */
 @keyframes btn-up-down {
-  0% {
-    transform: translateY(5px);
-  }
+    0% {
+        transform: translateY(5px);
+    }
 
-  100% {
-    transform: translateY(-5px);
-  }
+    100% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Responsiveness için yazý boyutlarýný düzenle */
+@media (max-width: 640px) {
+    .hero h2 {
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    .hero p {
+        font-size: 16px; /* Paragraf boyutu mobilde küçültüldü */
+    }
 }
 
 /*--------------------------------------------------------------

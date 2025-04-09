@@ -5,15 +5,16 @@
     int count = 0;
 }
 
-<h2>Burası Kategori Sayfası</h2>
+<h2 class="modern-title">Burası Kategori Sayfası</h2>
 
-<div class="container">
-    <table class="table table-bordered">
+<div class="table-wrapper">
+    <table class="my-table">
         <thead>
             <tr>
                 <th>Kategori Sayısı</th>
                 <th>CategoryID</th>
                 <th>Kategori İsmi</th>
+                <th>FilterClass</th>
                 <th>Güncelle</th>
                 <th>Sil</th>
             </tr>
@@ -22,16 +23,17 @@
             @*for while dowhile foreach*@
 
             @foreach (var item in Model)//model 3 veri var
-             {
+            {
                 count++;
-             <tr>
-                <td>@count</td>
-                <td>@item.CategoryID</td>
-                <td>@item.CategoryName</td>
-                <td><a href="/Categories/UpdateCategory/@item.CategoryID" class="btn btn-danger">Güncelle</a></td>
-                <td><a href="/Categories/DeleteCategory/@item.CategoryID" class="btn btn-dark">Sil</a></td>
+                <tr>
+                    <td>@count</td>
+                    <td>@item.CategoryID</td>
+                    <td>@item.CategoryName</td>
+                    <td>@item.FiltterClass</td>
+                    <td><a href="/Categories/UpdateCategory/@item.CategoryID" class="btn btn-danger">Güncelle</a></td>
+                    <td><a href="/Categories/DeleteCategory/@item.CategoryID" class="btn btn-dark">Sil</a></td>
 
-             </tr>
+                </tr>
             }
 
 

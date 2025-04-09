@@ -39,6 +39,7 @@
           </Key>
           <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CategoryName" Type="nvarchar" MaxLength="100" />
+          <Property Name="FiltterClass" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Tbl_Contact">
           <Key>
@@ -134,6 +135,18 @@
           <Property Name="ImageUrl" Type="nvarchar" MaxLength="1000" />
           <Property Name="Title" Type="nvarchar" MaxLength="200" />
         </EntityType>
+        <Association Name="FK_Tbl_Project_Tbl_Category1">
+          <End Role="Tbl_Category" Type="Self.Tbl_Category" Multiplicity="0..1" />
+          <End Role="Tbl_Project" Type="Self.Tbl_Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Category">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="Tbl_Project">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="DbAcunMedyaProject1ModelStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_About" EntityType="Self.Tbl_About" Schema="dbo" store:Type="Tables" />
@@ -147,6 +160,10 @@
           <EntitySet Name="Tbl_Skill" EntityType="Self.Tbl_Skill" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_Slider" EntityType="Self.Tbl_Slider" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_Testimonial" EntityType="Self.Tbl_Testimonial" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Tbl_Project_Tbl_Category1" Association="Self.FK_Tbl_Project_Tbl_Category1">
+            <End Role="Tbl_Category" EntitySet="Tbl_Category" />
+            <End Role="Tbl_Project" EntitySet="Tbl_Project" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -187,6 +204,8 @@
           </Key>
           <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CategoryName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FiltterClass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Tbl_Project" Relationship="Self.FK_Tbl_Project_Tbl_Category1" FromRole="Tbl_Category" ToRole="Tbl_Project" />
         </EntityType>
         <EntityType Name="Tbl_Contact">
           <Key>
@@ -242,6 +261,7 @@
           <Property Name="Image2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="Image3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="CategoryID" Type="Int32" />
+          <NavigationProperty Name="Tbl_Category" Relationship="Self.FK_Tbl_Project_Tbl_Category1" FromRole="Tbl_Project" ToRole="Tbl_Category" />
         </EntityType>
         <EntityType Name="Tbl_Services">
           <Key>
@@ -282,7 +302,19 @@
           <Property Name="ImageUrl" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
           <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityContainer Name="DbAcunMedyaProject1Entities1" annotation:LazyLoadingEnabled="true">
+        <Association Name="FK_Tbl_Project_Tbl_Category1">
+          <End Role="Tbl_Category" Type="Self.Tbl_Category" Multiplicity="0..1" />
+          <End Role="Tbl_Project" Type="Self.Tbl_Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Category">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="Tbl_Project">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DbAcunMedyaProject1DbAcunMedyaProject1DbAcunMedyaProject1Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Tbl_About" EntityType="Self.Tbl_About" />
           <EntitySet Name="Tbl_Category" EntityType="Self.Tbl_Category" />
@@ -295,13 +327,17 @@
           <EntitySet Name="Tbl_Skill" EntityType="Self.Tbl_Skill" />
           <EntitySet Name="Tbl_Slider" EntityType="Self.Tbl_Slider" />
           <EntitySet Name="Tbl_Testimonial" EntityType="Self.Tbl_Testimonial" />
+          <AssociationSet Name="FK_Tbl_Project_Tbl_Category1" Association="Self.FK_Tbl_Project_Tbl_Category1">
+            <End Role="Tbl_Category" EntitySet="Tbl_Category" />
+            <End Role="Tbl_Project" EntitySet="Tbl_Project" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DbAcunMedyaProject1ModelStoreContainer" CdmEntityContainer="DbAcunMedyaProject1Entities1">
+        <EntityContainerMapping StorageEntityContainer="DbAcunMedyaProject1ModelStoreContainer" CdmEntityContainer="DbAcunMedyaProject1DbAcunMedyaProject1DbAcunMedyaProject1Entities">
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="DbAcunMedyaProject1Model.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
@@ -337,6 +373,7 @@
               <MappingFragment StoreEntitySet="Tbl_Category">
                 <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
                 <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="FiltterClass" ColumnName="FiltterClass" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

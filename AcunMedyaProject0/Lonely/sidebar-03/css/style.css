@@ -59,6 +59,18 @@ body {
   text-align: left;
   background-color: #fff; }
 
+
+
+.modern-title {
+    background-color: #669999; /* Arka plan rengi */
+    color: #004d4d; /* Yazý rengi */
+    text-align: center; /* Metni ortala */
+    padding: 15px; /* Ýç boþluk */
+    border-radius: 10px; /* Köþeleri yuvarla */
+    font-family: 'Lobster', cursive; /* Modern bir yazý tipi */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Hafif gölge efekti */
+}
+
 [tabindex="-1"]:focus {
   outline: 0 !important; }
 
@@ -1332,9 +1344,16 @@ pre {
     margin-left: 91.66667%; } }
 
 .table {
-  width: 100%;
-  margin-bottom: 1rem;
-  color: #212529; }
+    background-color: white;
+    padding: 20px; /* Ýç boþluðu arttýrýr */
+    margin: 20px auto; /* Dýþ boþluk ve ortalama */
+    width: auto;
+    margin-bottom: 1rem;
+    color: #212529;
+    border-radius: 15px; /* Oval köþeler */
+    overflow: hidden; /* Taþan içerikleri kýrpar, köþelere düzgün uygulanýr */
+    box-shadow: 0 0 10px rgba(0,0,0,2); /* Hafif gölge efekti, istersen */
+}
   .table th,
   .table td {
     padding: 0.75rem;
@@ -8133,12 +8152,13 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #dee2e6; } }
 
 body {
-  font-family: "Poppins", Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.8;
-  font-weight: normal;
-  background: #fafafa;
-  color: gray; }
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.8;
+    font-weight: normal;
+    background: #99cccc;
+    color: gray;
+}
 
 a {
   -webkit-transition: .3s all ease;
@@ -8207,14 +8227,15 @@ h1, h2, h3, h4, h5,
   width: 100%; }
 
 #sidebar {
-  min-width: 270px;
-  max-width: 270px;
-  background: #494ca2;
-  color: #fff;
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-  position: relative; }
+    min-width: 270px;
+    max-width: 270px;
+    background: #669999;
+    color: #fff;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    position: relative;
+}
   #sidebar .h6 {
     color: #fff; }
   #sidebar.active {
@@ -8337,3 +8358,120 @@ a[data-toggle="collapse"] {
 
 .subscribe-form .form-control {
   background: #5356b1; }
+
+/*.table td, .table th {
+    white-space: nowrap;  Metnin tek satýrda kalmasýný saðlar 
+    overflow: hidden;  Taþan metni gizler 
+    text-overflow: ellipsis;  Taþan metnin yerine ... koyar 
+}
+
+.table td, .table th {
+    word-break: break-all;  Uzun linklerin kelime sýnýrýnda kýrýlmasýný saðlar 
+}
+
+.table-responsive {
+    overflow-x: auto;
+}*/
+
+
+.table-wrapper {
+    position: relative;
+    display: inline-block; /* Tablonun geniþliði kadar kutu */
+    border: 20px solid #669999; /* Tüm kenarlardan eþit boþluk gibi kalýn kenarlýk */
+    border-radius: 12px; /* Köþeleri yumuþat */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+    background-color: #ffffff; /* Kenarlýðýn içindeki alan (arka plan) beyaz */
+}
+.my-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    background-color: #ffffff; /* Tablonun içi beyaz */
+}
+
+    .my-table th,
+    .my-table td {
+        min-width: 120px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+/* Tabloyu sabit hücre geniþlikleriyle düzenlemek için */
+.my-table {
+    width: 100%;
+    table-layout: fixed; /* Hücre geniþlikleri içerik ne olursa olsun eþit veya min-width deðerinde olur */
+    border-collapse: collapse;
+    background-color: #ffffff; /* Tablo arka planý beyaz */
+}
+
+    /* Tüm tablo hücreleri için minimum geniþlik ayarlama */
+    .my-table th,
+    .my-table td {
+        min-width: 120px; /* Ýhtiyaç duyduðun deðere göre ayarla, böylece tek kelimelik içerik bile yer kaplar */
+        padding: 8px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+        /* Eðer hücre içerikleri ekstra boþluklarla doldurulmasý isteniyorsa, örneðin: */
+        .my-table td span {
+            display: inline-block;
+            width: 100%; /* Hücre geniþliðini tam olarak kullanýr */
+        }
+    .my-table td,
+    .my-table th {
+        color: #222222; /* veya #000000 (simsiyah), ya da #333 gibi net koyu gri */
+        font-weight: 500; /* yazýyý biraz kalýnlaþtýr */
+        font-size: 14px; /* çok küçükse büyüt */
+    }
+
+/* .cell-content: tablo içi özel düzen – önceki örneklerden alabilirsiniz */
+.cell-content {
+    max-width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    transition: max-width 0.3s ease, white-space 0.3s ease;
+}
+
+    .cell-content.expanded {
+        max-width: 500px;
+        white-space: normal;
+    }
+
+/* Ekle butonunun konumlandýrýlmasý: sol alt köþede yer alýr */
+.add-button {
+    position: absolute;
+    bottom: 10px; /* Ýstediðin boþluk */
+    left: 10px; /* Ýstediðin boþluk */
+    z-index: 10; /* Tablodan üstte görünsün */
+    /* Ýsteðe baðlý ek stil */
+    padding: 10px 20px;
+}
+label {
+    font-weight: 600; /* Kalýnlaþtýrýr */
+    color: #333; /* Daha net görünür */
+    font-size: 21px; /* (Ýsteðe baðlý) Bir týk büyütebiliriz */
+}
+input.form-control {
+    width: 60%; /* Ýsteðe göre 40%, 500px gibi de yapabilirsin */
+    max-width: 500px; /* Sayfaya yayýlmasýn diye */
+}
+h2 {
+    margin-bottom: 25px;  /* Baþlýktan sonra 25px boþluk */
+}
+/*.cell-content {
+    max-height: 40px;*/ /* Baþlangýçta maksimum yükseklik */
+    /*max-width:250px
+    overflow: hidden;*/ /* Taþan kýsmý gizle */
+    /*white-space: nowrap;*/ /* Tek satýrda tut */
+    /*text-overflow: ellipsis;*/ /* Taþan yerde üç nokta ekle */
+    /*transition: max-height 0.3s ease, white-space 0.3s ease;
+    cursor: pointer;*/ /* Kullanýcýya týklanabilir olduðunu belirt */
+/*}
+
+    .cell-content.expanded {
+        max-height: 300px;*/ /* Geniþletilmiþ hali; ihtiyaca göre deðeri ayarla */
+        /*white-space: normal;*/ /* Çok satýrlý görüntüye izin ver */
+    /*}*/

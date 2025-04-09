@@ -4,7 +4,7 @@
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
-<h2>Slider Güncelleme Sayfası</h2>
+<h2 class="modern-title">Slider Güncelleme Sayfası</h2class="modern-title">
 
 <form method="post">
     @Html.HiddenFor(x => x.SliderID)
@@ -19,6 +19,7 @@
 
     <label>Resim Linki</label>
     @Html.TextBoxFor(x => x.ImageUrl)
+    <br />
 
     <button>Güncelle</button>
 </form>

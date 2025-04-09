@@ -4,10 +4,10 @@
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
-<h2>Slider sayfası</h2>
+<h2 class="modern-title">Slider sayfası</h2>
 
-<div class="container">
-    <table class="table table-bordered">
+<div class="table-wrapper">
+    <table class="my-table">
         <thead>
             <tr>
                 <th>SliderID</th>
@@ -20,7 +20,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach(var item in Model)
+            @foreach (var item in Model)
             {
                 <tr>
                     <td>@item.SliderID</td>

@@ -1,20 +1,296 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
-<h2>Burası istatistik sayfası</h2>
+<h2 class="modern-title">İstatistik sayfası</h2>
+<style>
+    .stats-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        margin-bottom: 30px;
+    }
 
-<br />
-<label>Kaç Kategori Var: @ViewBag.CategoryCount</label>
+    .stats-card {
+        /* Kartların ana renkleri farklı; örnek olarak bazı kartlarda #99cccc, diğerlerinde #669999 kullanıldı. */
+        /* Bu örnekte dış dolguyu belirginleştirmek için border ekledik. */
+        background-color: inherit;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+        border: 5px solid #d9e6ea; /* Açık griye yakın mavi ton */
+        margin: 10px;
+    }
 
-<br />
-<label>Kaç Referans Var: @ViewBag.TestimonialCount</label>
+        .stats-card:hover {
+            transform: scale(1.03);
+        }
 
-<br />
-<label>Son Eklenen Proje: 10</label>
+    .card-header {
+        font-weight: bold;
+        font-size: 1.2em;
+        margin-bottom: 10px;
+        color: #ffffff;
+        background-color: #669999;
+        padding: 10px;
+        border-radius: 10px 10px 0 0;
+    }
 
-<br />
-<label>Kaç Proje Var: @ViewBag.ProjectCount</label>
+    .card-body {
+        background-color: #ffffff;
+        padding: 15px;
+        border-radius: 0 0 10px 10px;
+    }
 
+        /* Veri gösterimlerini daha belirgin hale getirmek için (örn. sayıların) */
+        .card-body p {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin: 5px 0;
+        }
+</style>
+
+<div class="container-fluid">
+    <div class="stats-grid">
+        <!-- 1. Satır -->
+        <div class="stats-container">
+            <div class="stats-card" style="background-color: #99cccc; ">
+                <div class="card-header"><i class="fas fa-list-alt stats-icon"></i> KATEGORİLER</div>
+                <div class="card-body">
+                    <p>Toplam Kategori Sayısı: @ViewBag.CategoryCount</p>
+                    <p>Son Kategori Adı: @ViewBag.LastCategory</p>
+                </div>
+            </div>
+
+            <div class="stats-card" style="background-color: #99cccc;">
+                <div class="card-header"><i class="fas fa-star stats-icon"></i> REFERANSLAR</div>
+                <div class="card-body">
+                    <p>Toplam Referans Sayısı: @ViewBag.TestimonialCount</p>
+                    <p>Son Eklenen Referans: @ViewBag.LastTestimonial</p>
+                </div>
+            </div>
+
+            <div class="stats-card" style="background-color: #99cccc; ">
+                <div class="card-header"><i class="fas fa-briefcase stats-icon"></i> PROJELER</div>
+                <div class="card-body">
+                    <p>Toplam Proje Sayısı: @ViewBag.ProjectCount</p>
+                    <p>Son Eklenen Proje: @ViewBag.LastProject</p>
+                </div>
+            </div>
+
+            <div class="stats-card" style="background-color: #99cccc;">
+                <div class="card-header"><i class="fas fa-graduation-cap stats-icon"></i> EĞİTİMLER</div>
+                <div class="card-body">
+                    <p>Toplam Eğitim Sayısı: @ViewBag.EducationCount</p>
+                    <p>Son Eklenen Eğitim: @ViewBag.LastEducation</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Satır -->
+        <div class="stats-container">
+            <div class="stats-card" style="background-color: #99cccc; ">
+                <div class="card-header"><i class="fas fa-chart-line stats-icon"></i> DENEYİMLER</div>
+                <div class="card-body">
+                    <p>Toplam Deneyim Sayısı: @ViewBag.JobsCount</p>
+                    <p>Son Eklenen Deneyim: @ViewBag.LastJobs</p>
+                </div>
+            </div>
+
+            <div class="stats-card" style="background-color: #99cccc;">
+                <div class="card-header"><i class="fas fa-envelope stats-icon"></i> MESAJLAR</div>
+                <div class="card-body">
+                    <p>Toplam Mesaj Sayısı: @ViewBag.MessageCount</p>
+                    <p>Son Mesaj: @ViewBag.LastMessage</p>
+                </div>
+            </div>
+
+            <div class="stats-card" style="background-color:#99cccc;">
+                <div class="card-header"><i class="fas fa-cogs stats-icon"></i> HİZMETLER</div>
+                <div class="card-body">
+                    <p>Toplam Hizmet Sayısı: @ViewBag.ServicesCount</p>
+                    <p>Son Eklenen Hizmet: @ViewBag.LastServices</p>
+                </div>
+            </div>
+
+            <div class="stats-card" style="background-color: #99cccc;">
+                <div class="card-header"><i class="fas fa-lightbulb stats-icon"></i> YETENEKLER</div>
+                <div class="card-body">
+                    <p>Toplam Yetenek Sayısı: @ViewBag.SkillCount</p>
+                    <p>Son Eklenen Yetenek: @ViewBag.LastSkill</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    @*
+        <!--@{
+            Layout = "~/Views/AdminLayout/Index.cshtml";
+            ViewBag.Title = "İstatistik";
+        }
+
+        <div class="container-fluid">
+            <h2 class="mb-4">İstatistikler</h2>
+            <div class="row g-4">-->
+                <!-- İlk 4 Kart -->
+                <!--<div class="col-lg-3 col-md-6">
+                    <div class="card text-white bg-gradient-primary shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">KATEGORİLER</h5>
+                            <p class="card-text">Toplam Kategori Sayısı: @ViewBag.CategoryCount</p>
+                            <p class="card-text">Son Kategori: @ViewBag.LastCategory</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card text-white bg-gradient-success shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">REFERANSLAR</h5>
+                            <p class="card-text">Toplam Referans: @ViewBag.TestimonialCount</p>
+                            <p class="card-text">Son Referans: @ViewBag.LastTestimonial</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card text-white bg-gradient-warning shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">PROJELER</h5>
+                            <p class="card-text">Toplam Proje: @ViewBag.ProjectCount</p>
+                            <p class="card-text">Son Proje: @ViewBag.LastProject</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card text-white bg-gradient-danger shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">EĞİTİMLER</h5>
+                            <p class="card-text">Toplam Eğitim: @ViewBag.EducationCount</p>
+                            <p class="card-text">Son Eğitim: @ViewBag.LastEducation</p>
+                        </div>
+                    </div>
+                </div>-->
+                <!-- İkinci 4 Kart -->
+                <!--<div class="col-lg-3 col-md-6">
+                    <div class="card text-white bg-gradient-info shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">DENEYİMLER</h5>
+                            <p class="card-text">Toplam Deneyim: @ViewBag.JobsCount</p>
+                            <p class="card-text">Son Deneyim: @ViewBag.LastJobs</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card text-white bg-gradient-secondary shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">MESAJLAR</h5>
+                            <p class="card-text">Toplam Mesaj: @ViewBag.MessageCount</p>
+                            <p class="card-text">Son Mesaj: @ViewBag.LastMessage</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card text-white bg-gradient-dark shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">HİZMETLER</h5>
+                            <p class="card-text">Toplam Hizmet: @ViewBag.ServicesCount</p>
+                            <p class="card-text">Son Hizmet: @ViewBag.LastServices</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card text-white bg-gradient-primary shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">YETENEKLER</h5>
+                            <p class="card-text">Toplam Yetenek: @ViewBag.SkillCount</p>
+                            <p class="card-text">Son Yetenek: @ViewBag.LastSkill</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+
+
+
+
+
+
+
+
+            @*<label>KATEGORİ</label>
+                <br />
+                <label>Toplam Kategori Sayısı: @ViewBag.CategoryCount</label>
+                <br />
+                <label> Son Kategori Adı: @ViewBag.LastCategory</label>
+                <br />
+
+
+                <br />
+                <br />
+                <label>REFERANSLAR</label>
+                <br />
+                <label>Eklenen Referans Sayısı: @ViewBag.TestimonialCount</label>
+                <br />
+                <label>Son Referans Adı: @ViewBag.LastTestomanial</label>
+                <br />
+
+
+                <br />
+                <br />
+                <label>PROJELER</label>
+                <br />
+                <label>Toplam Proje Sayısı: @ViewBag.ProjectCount</label>
+                <br />
+                <label>Eklenen Referans Sayısı: @ViewBag.TestimonialCount</label>
+                <br />
+
+
+                <br />
+                <br />
+                <label>EĞİTİM</label>
+                <br />
+                <label>Eğitim Kurumu Sayısı: @ViewBag.EducationCount</label>
+                <br />
+                <label>Son Eklenen Eğitim Kurumu: @ViewBag.LastEducation</label>
+                <br />
+
+
+                <br />
+                <br />
+                <label>DENEYİM</label>
+                <br />
+                <label>Deneyim Sayısı: @ViewBag.JobsCount</label>
+                <br />
+                <label>Son Eklenen Deneyim: @ViewBag.LastJobs</label>v
+
+
+                <br />
+                <br />
+                <label>MESAJLAR</label>
+                <br />
+                <label>Mesaj Sayısı: @ViewBag.MessageCount</label>
+                <br />
+                <label>Son Gönderilen Mesaj: @ViewBag.LastMessage</label>
+                <br />
+
+
+                <br />
+                <br />
+                <label>HİZMETLER</label>
+                <br />
+                <label>Hizmet Sayısı: @ViewBag.ServicesCount</label>
+                <br />
+                <label>Son Eklenen Hizmet: @ViewBag.LastServices</label>
+                <br />
+
+                <br />
+                <br />
+                <label>YETENEKLER</label>
+                <br />
+                <label>Yetenek Sayısı: @ViewBag.SkillCount</label>
+                <br />
+                <label>Son Eklenen Yetenek: @ViewBag.LastSkill</label>
+                <br />
+    *@

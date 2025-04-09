@@ -219,3 +219,33 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector("#messageForm");
+    if (!form) return;
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault(); // Sayfanýn yenilenmesini engelle
+
+        const formData = new FormData(form);
+
+        console.log("Submit event triggered");
+
+
+        fetch(form.action, {
+            method: form.method,
+            body: formData
+        })
+            .then(response => {
+                if (response.ok) {
+                    alert("Message sent successfully!");
+                    form.reset(); // Form temizlensin
+                } else {
+                    alert("There was an error sending the message.");
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("Something went wrong: " + error);
+            });
+    });
+});

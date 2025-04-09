@@ -4,10 +4,10 @@
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
-<h2>Hizmetler sayfası</h2>
+<h2 class="modern-title">Hizmetler sayfası</h2>
 
-<div class="container">
-    <table class="table table-bordered">
+<div class="table-wrapper">
+    <table class="my-table">
         <thead>
             <tr>
                 <th>ServicesID</th>
@@ -25,10 +25,10 @@
             {
                 <tr>
                     <td>@item.ServicesID</td>
-                    <td>@item.Decription</td>
+                    <td> <div class="cell-content">@item.Decription</div></td>
                     <td>@item.Title</td>
                     <td><img src="@item.IconUrl" style="width:50px"</td>
-                    <td>@item.Decription2</td>
+                    <td> <div class="cell-content">@item.Decription2</div></td>
                     <td><a href="/Services/UpdateServices/@item.ServicesID" class="btn btn-dark">Güncelle</a></td>
                     <td><a href="/Services/DeleteServices/@item.ServicesID" class="btn btn-danger">Sil</a></td>
                 </tr>

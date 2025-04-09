@@ -4,13 +4,17 @@
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
-<h2>Kategori Güncelleme Sayfası</h2>
+<h2 class="modern-title">Kategori Güncelleme Sayfası</h2>
 
 <form method="post">
 
-    @Html.HiddenFor(x=>x.CategoryID)
+    @Html.HiddenFor(x => x.CategoryID)
     <label>Kategori Adı</label>
-    @Html.TextBoxFor(x=>x.CategoryName)
+    @Html.TextBoxFor(x => x.CategoryName)
+    <br />
+    <label>Filter Class</label>
+    @Html.TextBoxFor(x => x.FiltterClass)
+    <br />
     <button>Güncelle</button>
 
 </form>

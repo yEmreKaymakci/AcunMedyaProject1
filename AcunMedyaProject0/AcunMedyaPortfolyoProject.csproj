@@ -212,16 +212,6 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
-    </Content>
     <Content Include="Lonely\assets\css\main.css" />
     <Content Include="Lonely\assets\img\apple-touch-icon.png" />
     <Content Include="Lonely\assets\img\favicon.png" />
@@ -291,12 +281,16 @@
     <Content Include="Lonely\assets\vendor\waypoints\noframework.waypoints.js" />
     <Content Include="Lonely\forms\Readme.txt" />
     <Content Include="Lonely\index.html" />
-    <EntityDeploy Include="Models\Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Model1.edmx.diagram">
+    <Content Include="Lonely\sidebar-03\js\tablo.js" />
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -304,6 +298,13 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.1.js" />
     <Content Include="Scripts\jquery-3.7.1.min.js" />
@@ -315,18 +316,18 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="sidebar-03\css\bootstrap.min.css" />
-    <Content Include="sidebar-03\css\bootstrap\mixins\_border-radius.css" />
-    <Content Include="sidebar-03\css\bootstrap\mixins\_screen-reader.css" />
-    <Content Include="sidebar-03\css\bootstrap\mixins\_visibility.css" />
-    <Content Include="sidebar-03\css\bootstrap\utilities\_stretched-link.css" />
-    <Content Include="sidebar-03\css\bootstrap\_media.css" />
-    <Content Include="sidebar-03\css\style.css" />
-    <Content Include="sidebar-03\index.html" />
-    <Content Include="sidebar-03\js\bootstrap.min.js" />
-    <Content Include="sidebar-03\js\jquery.min.js" />
-    <Content Include="sidebar-03\js\main.js" />
-    <Content Include="sidebar-03\js\popper.js" />
+    <Content Include="Lonely\sidebar-03\css\bootstrap.min.css" />
+    <Content Include="Lonely\sidebar-03\css\bootstrap\mixins\_border-radius.css" />
+    <Content Include="Lonely\sidebar-03\css\bootstrap\mixins\_screen-reader.css" />
+    <Content Include="Lonely\sidebar-03\css\bootstrap\mixins\_visibility.css" />
+    <Content Include="Lonely\sidebar-03\css\bootstrap\utilities\_stretched-link.css" />
+    <Content Include="Lonely\sidebar-03\css\bootstrap\_media.css" />
+    <Content Include="Lonely\sidebar-03\css\style.css" />
+    <Content Include="Lonely\sidebar-03\index.html" />
+    <Content Include="Lonely\sidebar-03\js\bootstrap.min.js" />
+    <Content Include="Lonely\sidebar-03\js\jquery.min.js" />
+    <Content Include="Lonely\sidebar-03\js\main.js" />
+    <Content Include="Lonely\sidebar-03\js\popper.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -342,105 +343,105 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="ViewPage1.cshtml" />
-    <Content Include="sidebar-03\.DS_Store" />
-    <Content Include="sidebar-03\css\.DS_Store" />
-    <Content Include="sidebar-03\css\bootstrap\.DS_Store" />
-    <Content Include="sidebar-03\css\bootstrap\mixins\.DS_Store" />
-    <Content Include="sidebar-03\fonts\.DS_Store" />
-    <Content Include="sidebar-03\images\.DS_Store" />
-    <Content Include="sidebar-03\js\.DS_Store" />
-    <Content Include="sidebar-03\scss\.DS_Store" />
-    <Content Include="sidebar-03\scss\bootstrap\.DS_Store" />
-    <Content Include="sidebar-03\scss\bootstrap\bootstrap-grid.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\bootstrap-reboot.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\bootstrap.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\mixins\_alert.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\mixins\_background-variant.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\mixins\_badge.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\mixins\_border-radius.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\mixins\_box-shadow.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\mixins\_breakpoints.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\mixins\_buttons.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\mixins\_caret.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\mixins\_clearfix.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\mixins\_deprecate.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\mixins\_float.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\mixins\_forms.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\mixins\_gradients.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\mixins\_grid-framework.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\mixins\_grid.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\mixins\_hover.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\mixins\_image.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\mixins\_list-group.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\mixins\_lists.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\mixins\_nav-divider.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\mixins\_pagination.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\mixins\_reset-text.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\mixins\_resize.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\mixins\_screen-reader.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\mixins\_size.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\mixins\_table-row.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\mixins\_text-emphasis.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\mixins\_text-hide.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\mixins\_text-truncate.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\mixins\_transition.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\mixins\_visibility.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\utilities\_align.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\utilities\_background.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\utilities\_borders.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\utilities\_clearfix.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\utilities\_display.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\utilities\_embed.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\utilities\_flex.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\utilities\_float.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\utilities\_overflow.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\utilities\_position.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\utilities\_screenreaders.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\utilities\_shadows.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\utilities\_sizing.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\utilities\_spacing.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\utilities\_stretched-link.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\utilities\_text.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\utilities\_visibility.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\vendor\_rfs.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\_alert.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\_badge.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\_breadcrumb.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\_button-group.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\_buttons.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\_card.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\_carousel.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\_close.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\_code.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\_custom-forms.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\_dropdown.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\_forms.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\_functions.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\_grid.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\_images.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\_input-group.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\_jumbotron.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\_list-group.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\_media.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\_mixins.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\_modal.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\_nav.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\_navbar.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\_pagination.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\_popover.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\_print.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\_progress.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\_reboot.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\_root.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\_spinners.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\_tables.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\_toasts.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\_tooltip.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\_transitions.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\_type.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\_utilities.scss" />
-    <Content Include="sidebar-03\scss\bootstrap\_variables.scss" />
-    <Content Include="sidebar-03\scss\style.scss" />
+    <Content Include="Lonely\sidebar-03\.DS_Store" />
+    <Content Include="Lonely\sidebar-03\css\.DS_Store" />
+    <Content Include="Lonely\sidebar-03\css\bootstrap\.DS_Store" />
+    <Content Include="Lonely\sidebar-03\css\bootstrap\mixins\.DS_Store" />
+    <Content Include="Lonely\sidebar-03\fonts\.DS_Store" />
+    <Content Include="Lonely\sidebar-03\images\.DS_Store" />
+    <Content Include="Lonely\sidebar-03\js\.DS_Store" />
+    <Content Include="Lonely\sidebar-03\scss\.DS_Store" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\.DS_Store" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\bootstrap-grid.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\bootstrap-reboot.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\bootstrap.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\mixins\_alert.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\mixins\_badge.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\mixins\_box-shadow.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\mixins\_breakpoints.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\mixins\_buttons.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\mixins\_caret.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\mixins\_deprecate.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\mixins\_float.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\mixins\_forms.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\mixins\_gradients.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\mixins\_grid.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\mixins\_hover.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\mixins\_image.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\mixins\_list-group.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\mixins\_lists.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\mixins\_pagination.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\mixins\_resize.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\mixins\_screen-reader.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\mixins\_size.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\mixins\_table-row.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\mixins\_text-hide.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\mixins\_text-truncate.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\mixins\_transition.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\mixins\_visibility.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\utilities\_align.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\utilities\_background.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\utilities\_borders.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\utilities\_clearfix.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\utilities\_display.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\utilities\_embed.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\utilities\_flex.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\utilities\_float.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\utilities\_overflow.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\utilities\_position.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\utilities\_screenreaders.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\utilities\_shadows.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\utilities\_sizing.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\utilities\_spacing.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\utilities\_stretched-link.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\utilities\_text.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\utilities\_visibility.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\vendor\_rfs.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\_alert.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\_badge.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\_breadcrumb.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\_button-group.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\_buttons.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\_card.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\_carousel.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\_close.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\_code.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\_custom-forms.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\_dropdown.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\_forms.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\_functions.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\_grid.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\_images.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\_input-group.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\_jumbotron.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\_list-group.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\_media.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\_mixins.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\_modal.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\_nav.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\_navbar.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\_pagination.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\_popover.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\_print.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\_progress.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\_reboot.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\_root.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\_spinners.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\_tables.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\_toasts.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\_tooltip.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\_transitions.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\_type.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\_utilities.scss" />
+    <Content Include="Lonely\sidebar-03\scss\bootstrap\_variables.scss" />
+    <Content Include="Lonely\sidebar-03\scss\style.scss" />
     <Content Include="Views\AdminLayout\Index.cshtml" />
     <Content Include="Views\Categories\Index.cshtml" />
     <Content Include="Views\Statistic\Index.cshtml" />
@@ -513,6 +514,17 @@
     <Content Include="Views\Default\PartialServices.cshtml" />
     <Content Include="Views\Default\PartialContact.cshtml" />
     <Content Include="Views\Default\PartialMessage.cshtml" />
+    <Content Include="Views\Default\PartialSlider.cshtml" />
+    <Content Include="Views\Default\PartialAbout.cshtml" />
+    <Content Include="Views\Default\PartialSkill.cshtml" />
+    <Content Include="Views\Default\PartialSumaryContact.cshtml" />
+    <Content Include="Views\Default\PartialSumaryName.cshtml" />
+    <Content Include="Views\Default\PartialEducation.cshtml" />
+    <Content Include="Views\Default\PartialJobs.cshtml" />
+    <Content Include="Views\Default\PartialPortfolio.cshtml" />
+    <Content Include="Views\Default\PartialProject.cshtml" />
+    <Content Include="Views\Default\PartialPortfolio2.cshtml" />
+    <Content Include="Views\Default\PartialPorfolio.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
